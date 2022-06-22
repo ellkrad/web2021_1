@@ -22,6 +22,22 @@ db.serialize( () => {
 			console.log('Error: ', error );
 			return;
 		}
-		console.log( "テーブルを作成しました" );
+		console.log( "carテーブルを作成しました" );
+	});
+});
+
+let schema2 = `
+create table test(
+id integer primary key,
+name text not null,
+);
+`
+db.serialize( () => {
+	db.run( schema2, (error, row) => {
+		if(error) {
+			console.log('Error: ', error );
+			return;
+		}
+		console.log( "makerテーブルを作成しました" );
 	});
 });
