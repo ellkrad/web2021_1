@@ -14,10 +14,6 @@ id integer primary key,
 name text not null,
 maker_id integer not null
 );
-create table maker(
-id integer primary key,
-name text not null,
-);
 `
 
 db.serialize( () => {
@@ -26,6 +22,6 @@ db.serialize( () => {
 			console.log('Error: ', error );
 			return;
 		}
-		console.log( "carテーブルを作成しました" );
+		console.log( "テーブルを作成しました" );
 	});
 });
