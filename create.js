@@ -13,6 +13,10 @@ id integer primary key,
 name text not null,
 maker_id integer not null
 );
+create table maker(
+id integer primary key,
+name text not null,
+);
 `
 
 //let schema = `
