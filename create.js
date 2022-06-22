@@ -9,7 +9,7 @@ const db = new sqlite3.Database('test2.db');
 //`
 
 let schema = `
-create table test(
+create table car(
 id integer primary key,
 name text not null,
 maker_id integer not null
@@ -27,7 +27,7 @@ db.serialize( () => {
 });
 
 let schema2 = `
-create table test(
+create table maker(
 id integer primary key,
 name text not null,
 );
