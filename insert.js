@@ -6,7 +6,7 @@ const db = new sqlite3.Database('test2.db');
 //insert into test ("name") values ("suda");
 
 let sql = `
-insert into test ("name","maker_id") values ("NSK",1);
+insert into car ("name","maker_id") values ("NSK",1);
 `
 
 
@@ -16,6 +16,20 @@ db.serialize( () => {
 			console.log('Error: ', error );
 			return;
 		}
-		console.log( "データを追加しました" );
+		console.log( "carテーブルにデータを追加しました" );
+	});
+});
+
+let sql2 = `
+insert into maker ("name") values ("Honda");
+`
+
+db.serialize( () => {
+	db.run( sql2, (error, row) => {
+		if(error) {
+			console.log('Error: ', error );
+			return;
+		}
+		console.log( "makerテーブルにデータを追加しました" );
 	});
 });
