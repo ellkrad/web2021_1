@@ -1,9 +1,12 @@
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('test2.db');
 
+
+//let sql = `
+//insert into test ("name") values ("suda");
+
 let sql = `
-insert into test ("name") values ("suda");
-`
+insert into test ("name","maker_id") values ("NSK",1);
 
 db.serialize( () => {
 	db.run( sql, (error, row) => {
