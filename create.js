@@ -7,13 +7,13 @@ const db = new sqlite3.Database('test2.db');
 // name text
 //);
 //`
+//create table car(
+//id integer primary key,
+//name text not null,
+//maker_id integer not null
+//);
 
 let schema = `
- create table car(
-id integer primary key,
-name text not null,
-maker_id integer not null
-);
 create table maker(
 id integer primary key,
 name text not null,
